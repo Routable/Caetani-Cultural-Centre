@@ -1,0 +1,16 @@
+<body>
+  <input type="text" id="url" placeholder="Place url here">
+  <button class = "button" onclick="generateQRCode()">Press</button>
+  <img imgsrc="" id="qrcode"></img>
+</body>
+
+<script>
+  function generateQRCode(){
+    var url = document.getElementById("url").value;
+    var googleapi = "https://chart.googleapis.com/chart?cht=qr";
+    var imglink = googleapi + "&chl=" + url + "&chs=300x300&choe=UTF-8";
+    console.log(imglink);
+    var oImg = document.getElementById("qrcode");
+    oImg.setAttribute('src', imglink);
+  }
+</script>
